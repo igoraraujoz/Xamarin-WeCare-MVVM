@@ -28,7 +28,8 @@ namespace WeCare.Services
 
         public Task InitializeAsync()
         {
-            return NavigateToAsync<LoginViewModel>();
+            //return NavigateToAsync<LoginViewModel>();
+            return NavigateToAsync<ProntuarioViewModel>();
         }
 
         public Task NavigateToAsync<TViewModel>() where TViewModel : BaseVM
@@ -106,6 +107,10 @@ namespace WeCare.Services
             {
                 CurrentApplication.MainPage = new NavigationPage(page);
             }
+            else if(page is ProntuarioView)
+            {
+                CurrentApplication.MainPage = new NavigationPage(page);
+            }
 
             else
             {
@@ -154,7 +159,7 @@ namespace WeCare.Services
         {
             _mappings.Add(typeof(LoginViewModel), typeof(LoginView));
             _mappings.Add(typeof(HomeViewModel), typeof(HomeView));
-            //_mappings.Add(typeof(DetalhesViewModel), typeof(DetalhesView));
+            _mappings.Add(typeof(ProntuarioViewModel), typeof(ProntuarioView));
         }
     }
 }

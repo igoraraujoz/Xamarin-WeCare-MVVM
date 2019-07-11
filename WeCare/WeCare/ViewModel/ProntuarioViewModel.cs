@@ -47,11 +47,11 @@ namespace WeCare.ViewModel
             var validado = ValidarItens(model);
             if (validado)
             {
-
-
-                //var result = await service.Logar(model);
-                //if (result)
-                await _serviceNavigation.NavigateToAsync<HomeViewModel>();
+                var result = await prontuarioService.Cadastrar(model);
+                if(result)
+                    await _serviceNavigation.NavigateToAsync<HomeViewModel>();
+                else
+                    await Application.Current.MainPage.DisplayAlert("Erro !", "Houve um problema no cadastro, contate o administrador", "Ok");
             }
             else
             {
