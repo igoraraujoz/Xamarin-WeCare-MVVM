@@ -9,6 +9,7 @@ namespace WeCare.Model
         public Guid Id { get; set; }
         public DateTime Data { get; set; }
         public List<EspecialidadeModel> Especialidade { get; set; }
+        public EspecialidadeModel SelectedEspecialidade { get; set; }
         public string UnidadeClinica { get; set; }
         public string Medico { get; set; }
         public string Descricao { get; set; }

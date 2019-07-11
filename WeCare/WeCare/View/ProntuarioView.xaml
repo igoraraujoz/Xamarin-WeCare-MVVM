@@ -11,7 +11,14 @@
                     VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
 
                 <DatePicker Date="{Binding Data }" />
-                <Entry Placeholder="Especialidade" Text="{Binding Especialidade}"/>
+
+
+                <Picker x:Name="picker" 
+                        Title="Selecione uma especialidade" 
+                        ItemsSource="{Binding Especialidade}"
+                        ItemDisplayBinding="{Binding Descricao}"
+                        SelectedItem="{Binding SelectedEspecialidade}"/>
+
                 <Entry Placeholder="Medico" Text="{Binding Medico}"/>
                 <Entry Placeholder="Unidade Clínica" Text="{Binding UnidadeClinica}"/>
                 <Entry Placeholder="Descrição" Text="{Binding Descricao}"/>

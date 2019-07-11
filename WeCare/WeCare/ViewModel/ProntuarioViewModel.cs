@@ -40,6 +40,7 @@ namespace WeCare.ViewModel
             model.Data = this.Data;
             model.Descricao = this.Descricao;
             model.Especialidade = this.Especialidade;
+            model.SelectedEspecialidade = this.selectedEspecialidade;
             model.Id = Guid.NewGuid();
             model.Medico = this.Medico;
             model.UnidadeClinica = this.UnidadeClinica;
@@ -69,8 +70,15 @@ namespace WeCare.ViewModel
         private DateTime data = DateTime.MinValue;
         public DateTime Data { get { return data; } set { this.Set("Data", ref data, value); } }
 
-        private List<EspecialidadeModel> especialidade = null;
+        private List<EspecialidadeModel> especialidade = new List<EspecialidadeModel>() {
+        new EspecialidadeModel() {  Id = 1, Descricao = "Clinico Geral" },
+        new EspecialidadeModel() {Id= 2, Descricao = "Dermatologista" } };
+
+
         public List<EspecialidadeModel> Especialidade { get { return especialidade; } set { this.Set("Especialidade", ref especialidade, value); } }
+
+        private EspecialidadeModel selectedEspecialidade = null;
+        public EspecialidadeModel SelectedEspecialidade { get { return selectedEspecialidade; } set { this.Set("SelectedEspecialidade", ref selectedEspecialidade, value); } }
 
 
         private string unidadeClinica = string.Empty;
