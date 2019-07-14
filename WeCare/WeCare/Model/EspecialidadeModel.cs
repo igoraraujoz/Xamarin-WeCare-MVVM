@@ -6,7 +6,7 @@ namespace WeCare.Model
 {
     public class EspecialidadeModel
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Descricao { get; set; }
     }
 }

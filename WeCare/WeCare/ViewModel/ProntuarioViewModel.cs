@@ -67,12 +67,12 @@ namespace WeCare.ViewModel
         }
 
 
-        private DateTime data = DateTime.MinValue;
+        private DateTime data = DateTime.Now;
         public DateTime Data { get { return data; } set { this.Set("Data", ref data, value); } }
 
         private List<EspecialidadeModel> especialidade = new List<EspecialidadeModel>() {
-        new EspecialidadeModel() {  Id = 1, Descricao = "Clinico Geral" },
-        new EspecialidadeModel() {Id= 2, Descricao = "Dermatologista" } };
+        new EspecialidadeModel() {  Id = new Guid("6009f71f-11db-4f1d-b2f7-2c2bfe859a74"), Descricao = "Clinico Geral" },
+        new EspecialidadeModel() {Id= new Guid("1bb1ee8d-9b06-48bd-8417-2f405cf539bb"), Descricao = "Dermatologista" } };
 
 
         public List<EspecialidadeModel> Especialidade { get { return especialidade; } set { this.Set("Especialidade", ref especialidade, value); } }

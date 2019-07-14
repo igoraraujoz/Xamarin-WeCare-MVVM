@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using WeCare.Data;
 using WeCare.Model;
 
 namespace WeCare.Services
 {
     public class ProntuarioService
     {
+        ProntuarioData _db;       
+
         public async Task<bool> Cadastrar(ProntuarioModel model)
         {
-            bool result = false;            
+            _db = new ProntuarioData();
 
-            return result;
+            var save = _db.Save(model);
+
+            if (save > 0)
+                return true;
+            else
+                return false;
         }
     }
 }

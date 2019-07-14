@@ -10,7 +10,7 @@ namespace WeCare.Data
     public abstract class BaseData<T>
     {
         protected SQLiteConnection db;
-        private string dbName = "AppExemplo.db3";
+        private string dbName = "WeCareDb.db3";
         public BaseData()
         {
             this.db = DependencyService.Get<ISQLite>().GetConnection(this.dbName);
@@ -23,7 +23,7 @@ namespace WeCare.Data
 
         public abstract int Update(T entity);
 
-        public abstract T GetById(int id);
+        public abstract T GetById(Guid id);
 
         public abstract List<T> GetAll();
 
