@@ -13,11 +13,11 @@ namespace WeCare.ViewModel
     public class ProntuarioViewModel : BaseVM
     {
         ProntuarioService prontuarioService;
-        INavigationService _serviceNavigation;
+        INavigationService _serviceNavigation;        
 
         public ProntuarioViewModel(INavigationService serviceNavigation)
         {
-            prontuarioService = new ProntuarioService();
+            prontuarioService = new ProntuarioService();            
             _serviceNavigation = serviceNavigation;
         }
 
@@ -44,6 +44,7 @@ namespace WeCare.ViewModel
             model.Id = Guid.NewGuid();
             model.Medico = this.Medico;
             model.UnidadeClinica = this.UnidadeClinica;
+            model.EspecialidadeId = this.selectedEspecialidade.Id;
 
             var validado = ValidarItens(model);
             if (validado)
@@ -70,9 +71,7 @@ namespace WeCare.ViewModel
         private DateTime data = DateTime.Now;
         public DateTime Data { get { return data; } set { this.Set("Data", ref data, value); } }
 
-        private List<EspecialidadeModel> especialidade = new List<EspecialidadeModel>() {
-        new EspecialidadeModel() {  Id = new Guid("6009f71f-11db-4f1d-b2f7-2c2bfe859a74"), Descricao = "Clinico Geral" },
-        new EspecialidadeModel() {Id= new Guid("1bb1ee8d-9b06-48bd-8417-2f405cf539bb"), Descricao = "Dermatologista" } };
+        private List<EspecialidadeModel> especialidade = new EspecialidadeService().GetAll();
 
 
         public List<EspecialidadeModel> Especialidade { get { return especialidade; } set { this.Set("Especialidade", ref especialidade, value); } }

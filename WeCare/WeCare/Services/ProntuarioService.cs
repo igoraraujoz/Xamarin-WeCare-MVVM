@@ -22,5 +22,12 @@ namespace WeCare.Services
             else
                 return false;
         }
+
+        public ProntuarioModel GetById(Guid id)
+        {
+            _db = new ProntuarioData();
+
+            return _db.GetById(id);
+        }
     }
 }

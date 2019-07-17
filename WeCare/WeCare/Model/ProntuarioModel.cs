@@ -16,5 +16,6 @@ namespace WeCare.Model
         public string UnidadeClinica { get; set; }
         public string Medico { get; set; }
         public string Descricao { get; set; }
+        public Guid EspecialidadeId { get; set; }
     }
 }
