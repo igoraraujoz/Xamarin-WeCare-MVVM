@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
              x:Class="WeCare.View.HomeView">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+
+            <iconize:IconButton Text="fas-notes-medical" FontSize="35"  TextColor="Red" Command="{Binding ProntuarioCommand}}" />
+            <iconize:IconButton Text="fas-history" FontSize="35"  TextColor="Red" />
+            <iconize:IconButton Text="fas-bell" FontSize="35"  TextColor="Red" />
+            <iconize:IconButton Text="fas-question" FontSize="35"  TextColor="Red" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

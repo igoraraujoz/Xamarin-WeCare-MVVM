@@ -29,7 +29,7 @@ namespace WeCare.Services
         public Task InitializeAsync()
         {
             //return NavigateToAsync<LoginViewModel>();
-            return NavigateToAsync<ProntuarioViewModel>();
+            return NavigateToAsync<HomeViewModel>();
         }
 
         public Task NavigateToAsync<TViewModel>() where TViewModel : BaseVM
