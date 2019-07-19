@@ -7,6 +7,7 @@ namespace WeCare.Model
 {
     public class ProntuarioModel
     {
+        [PrimaryKey]
         public Guid Id { get; set; }
         public DateTime Data { get; set; }
         [Ignore]

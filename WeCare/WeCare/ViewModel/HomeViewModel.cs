@@ -29,5 +29,17 @@ namespace WeCare.ViewModel
                 });
             }
         }
+
+        public ICommand HistoricoCommand
+        {
+            get
+            {
+                return new Command(async (value) =>
+                {
+                    ProntuarioModel item = value as ProntuarioModel;
+                    await _serviceNavigation.NavigateToAsync<HistoricoViewModel>(item);
+                });
+            }
+        }
     }
 }

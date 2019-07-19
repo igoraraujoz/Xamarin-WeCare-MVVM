@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeCare.View.DetalhesProntuarioView">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Padding="15">
+                <!--<Image Source="logo.png" Aspect="AspectFit" />-->
+
+                <Label Text="Bem vindo!" Margin="15" TextColor="Red"
+                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <DatePicker Date="{Binding Data }" />
+
+
+                <Picker x:Name="picker" 
+                        Title="Selecione uma especialidade" 
+                        ItemsSource="{Binding Especialidade}"
+                        ItemDisplayBinding="{Binding Descricao}"
+                        SelectedItem="{Binding SelectedEspecialidade}"/>
+
+                <Entry Placeholder="Medico" Text="{Binding Medico}"/>
+                <Entry Placeholder="Unidade Clínica" Text="{Binding UnidadeClinica}"/>
+                <Entry Placeholder="Descrição" Text="{Binding Descricao}"/>
+
+                <Button Text="Atualizar" TextColor="White"  BackgroundColor="Red" Command="{Binding AtualizarCommand}" />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

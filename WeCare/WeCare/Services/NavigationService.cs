@@ -111,7 +111,14 @@ namespace WeCare.Services
             {
                 CurrentApplication.MainPage = new NavigationPage(page);
             }
-
+            else if(page is HistoricoView)
+            {
+                CurrentApplication.MainPage = new NavigationPage(page);
+            }
+            else if(page is DetalhesProntuarioView)
+            {
+                CurrentApplication.MainPage = new NavigationPage(page);
+            }
             else
             {
                 var nav = CurrentApplication.MainPage as NavigationPage;
@@ -160,6 +167,8 @@ namespace WeCare.Services
             _mappings.Add(typeof(LoginViewModel), typeof(LoginView));
             _mappings.Add(typeof(HomeViewModel), typeof(HomeView));
             _mappings.Add(typeof(ProntuarioViewModel), typeof(ProntuarioView));
+            _mappings.Add(typeof(HistoricoViewModel), typeof(HistoricoView));
+            _mappings.Add(typeof(DetalhesProntuarioViewModel), typeof(DetalhesProntuarioView));
         }
     }
 }
