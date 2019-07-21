@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WeCare.View.Templates.TimelineWithImage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+
+    <StackLayout
+        Margin="20,0,0,0"
+        Orientation="Horizontal"
+        VerticalOptions="Center">
+
+        <!--  VERTICAL LINE WITH IMAGE  -->
+        <StackLayout
+            x:Name="firstStackLayout"
+            Margin="0,0,0,-6"
+            HorizontalOptions="Center"
+            Orientation="Vertical"
+            VerticalOptions="Center">
+            <!--  FIRST CENTER VERTICAL LINE  -->
+            <BoxView
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0,0,0,-6"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                WidthRequest="3"
+                Color="Purple" />
+            <!--  IMAGE  -->
+            <ff:CachedImage
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,0,0,0"
+                HeightRequest="55"
+                Source="mvp.jpg"
+                WidthRequest="55">
+                <ff:CachedImage.Transformations>
+                    <ffTransformations:RoundedTransformation
+                        BorderHexColor="#FF800080"
+                        BorderSize="20"
+                        Radius="240" />
+                </ff:CachedImage.Transformations>
+            </ff:CachedImage>
+            <!--  LAST CENTER VERTICAL LINE  -->
+            <BoxView
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="0,-6,0,0"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                WidthRequest="3"
+                Color="Purple" />
+        </StackLayout>
+
+        <!--  MESSAGE  -->
+        <StackLayout
+            Margin="5,0,0,0"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal"
+            VerticalOptions="Center">
+            <StackLayout
+                Margin="0,0,5,0"
+                HorizontalOptions="Start"
+                Orientation="Vertical"
+                VerticalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    HorizontalOptions="Start"
+                    Text="{Binding Medico}"
+                    TextColor="Purple"
+                    XAlign="Start" />
+                <StackLayout
+                    Margin="0,0,5,0"
+                    Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand">
+                    <Label
+                        FontSize="14"
+                        Text="{Binding UnidadeClinica}"
+                        TextColor="#4e5156" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="12"
+                        Text="{Binding Data}"
+                        TextColor="#3b0999" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentView>

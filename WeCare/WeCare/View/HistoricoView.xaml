@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:WeCare.Controls" 
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:template="clr-namespace:WeCare.View.Templates"
              x:Class="WeCare.View.HistoricoView">
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout>
             <flv:FlowListView 
                 RowHeight="150"
@@ -32,6 +34,27 @@
                     </DataTemplate>
                 </flv:FlowListView.FlowColumnTemplate>
             </flv:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:CustomListView                 
+                HasUnevenRows="False"
+                ItemsSource="{Binding ItensHistorico}"
+                RowHeight="107"
+                SelectionMode="None"
+                SeparatorColor="Gray"
+                SeparatorVisibility="None"
+                Command="{Binding ItemSelectedCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <template:TimelineWithImage />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:CustomListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
