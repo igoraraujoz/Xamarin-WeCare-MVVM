@@ -4,14 +4,15 @@ using System.Text;
 using System.Threading.Tasks;
 using WeCare.Data;
 using WeCare.Model;
+using WeCare.Services.Interfaces;
 
 namespace WeCare.Services
 {
-    public class ProntuarioService
+    public class ProntuarioService : IProntuarioService
     {
         ProntuarioData _db;       
 
-        public async Task<bool> Cadastrar(ProntuarioModel model)
+        public bool Cadastrar(ProntuarioModel model)
         {
             _db = new ProntuarioData();
 
@@ -22,7 +23,7 @@ namespace WeCare.Services
             else
                 return false;
         }
-        public async Task<bool> Atualizar(ProntuarioModel model)
+        public bool Atualizar(ProntuarioModel model)
         {
             _db = new ProntuarioData();
 

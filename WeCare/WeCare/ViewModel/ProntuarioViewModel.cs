@@ -49,7 +49,7 @@ namespace WeCare.ViewModel
             var validado = ValidarItens(model);
             if (validado)
             {
-                var result = await prontuarioService.Cadastrar(model);
+                var result = prontuarioService.Cadastrar(model);
                 if(result)
                     await _serviceNavigation.NavigateToAsync<HomeViewModel>();
                 else

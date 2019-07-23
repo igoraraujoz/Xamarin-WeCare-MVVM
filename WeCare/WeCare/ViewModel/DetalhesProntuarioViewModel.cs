@@ -68,7 +68,7 @@ namespace WeCare.ViewModel
             var validado = ValidarItens(model);
             if (validado)
             {
-                var result = await prontuarioService.Atualizar(model);
+                var result = prontuarioService.Atualizar(model);
                 if (result)
                     await _serviceNavigation.NavigateToAsync<HomeViewModel>();
                 else

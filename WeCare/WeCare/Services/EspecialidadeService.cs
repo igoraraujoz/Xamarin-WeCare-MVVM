@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using WeCare.Data;
 using WeCare.Model;
+using WeCare.Services.Interfaces;
 
 namespace WeCare.Services
 {
-    public class EspecialidadeService
+    public class EspecialidadeService : IEspecialidadeService
     {
         EspecialidadeData _db;
 

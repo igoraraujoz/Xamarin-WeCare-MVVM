@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource StackDefault}">
             <StackLayout Padding="15">
-                <!--<Image Source="logo.png" Aspect="AspectFit" />-->
+                <Image Source="Logo_mini.png" Aspect="AspectFit" />
 
                 <Label Text="Cadastre um novo prontuário!" Margin="30" TextColor="Purple"
                     VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium"/>
@@ -19,7 +19,7 @@
                         ItemDisplayBinding="{Binding Descricao}"
                         SelectedItem="{Binding SelectedEspecialidade}"/>
 
-                <Entry Placeholder="Medico" Text="{Binding Medico}"/>
+                <Entry Placeholder="Médico" Text="{Binding Medico}"/>
                 <Entry Placeholder="Unidade Clínica" Text="{Binding UnidadeClinica}"/>
                 <Entry Placeholder="Descrição" Text="{Binding Descricao}"/>
 

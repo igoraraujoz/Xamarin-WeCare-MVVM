@@ -5,10 +5,6 @@
              x:Class="WeCare.View.HomeView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
             <iconize:IconButton Text="fas-notes-medical" FontSize="35"  TextColor="Red" Command="{Binding ProntuarioCommand}}" />
             <iconize:IconButton Text="fas-history" FontSize="35"  TextColor="Red" Command="{Binding HistoricoCommand}"/>
             <iconize:IconButton Text="fas-bell" FontSize="35"  TextColor="Red" />

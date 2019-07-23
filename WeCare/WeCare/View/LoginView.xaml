@@ -5,15 +5,15 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Padding="15">
-                <!--<Image Source="logo.png" Aspect="AspectFit" />-->
+                <Image Source="Logo_mini.png" Aspect="AspectFit" />
 
-                <Label Text="Bem vindo!" Margin="15" TextColor="Red"
+                <Label Text="Bem vindo!" Margin="15" TextColor="Purple"
                     VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
 
                 <Entry Placeholder="Usuario" Text="{Binding Usuario}" />
                 <Entry Placeholder="Senha" IsPassword="true" Text="{Binding Senha}"/>
 
-                <Button Text="Logar" TextColor="White"  BackgroundColor="Red" Command="{Binding LogarCommand}" />
+                <Button Text="Logar" Command="{Binding LogarCommand}" />
 
             </StackLayout>
         </StackLayout>
