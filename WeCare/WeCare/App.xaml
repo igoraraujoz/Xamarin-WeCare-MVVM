@@ -4,5 +4,27 @@
              x:Class="WeCare.App">
     <Application.Resources>
 
+        <!-- Content Page Styles -->
+        <Style x:Key="StackDefault" TargetType="StackLayout">
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="15" />
+        </Style>
+
+        <!-- Entry Styles -->
+        <Style x:Key="EntryDefault" TargetType="Entry">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        
+        <!-- Button Styles -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#FF800080"/>
+            <Setter Property="BorderColor" Value="#FF800080" />
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BorderRadius" Value="4" />
+            <Setter Property="BorderWidth" Value="4"/>
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
     </Application.Resources>
 </Application>

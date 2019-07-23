@@ -33,7 +33,7 @@
                 Grid.Column="0"
                 Margin="0,0,0,0"
                 HeightRequest="55"
-                Source="mvp.jpg"
+                Source="clinical_wecare.png"
                 WidthRequest="55">
                 <ff:CachedImage.Transformations>
                     <ffTransformations:RoundedTransformation
@@ -84,7 +84,7 @@
                     <Label
                         FontAttributes="Bold"
                         FontSize="12"
-                        Text="{Binding Data}"
+                        Text="{Binding DateTimeString}"
                         TextColor="#3b0999" />
                 </StackLayout>
             </StackLayout>

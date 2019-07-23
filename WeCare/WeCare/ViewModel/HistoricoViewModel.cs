@@ -1,6 +1,7 @@
 ﻿using DLToolkit.Forms.Controls;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Windows.Input;
 using WeCare.Model;
@@ -30,6 +31,7 @@ namespace WeCare.ViewModel
 
             foreach (var item in lista)
             {
+                item.DateTimeString = item.Data.ToString("dd/MM/yyyy");
                 ItensHistorico.Add(item);
             }
         }

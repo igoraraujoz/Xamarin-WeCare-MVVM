@@ -11,6 +11,8 @@ namespace WeCare.Model
         public Guid Id { get; set; }
         public DateTime Data { get; set; }
         [Ignore]
+        public string DateTimeString { get; set; }
+        [Ignore]
         public List<EspecialidadeModel> Especialidade { get; set; }
         [Ignore]
         public EspecialidadeModel SelectedEspecialidade { get; set; }

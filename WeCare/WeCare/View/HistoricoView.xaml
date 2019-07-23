@@ -4,38 +4,9 @@
              xmlns:controls="clr-namespace:WeCare.Controls" 
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              xmlns:template="clr-namespace:WeCare.View.Templates"
-             x:Class="WeCare.View.HistoricoView">
-    <!--<ContentPage.Content>
-        <StackLayout>
-            <flv:FlowListView 
-                RowHeight="150"
-                HeightRequest="400"
-                FlowColumnCount="2" 
-                FlowColumnExpand="First" 
-                SeparatorVisibility="None"
-                BackgroundColor="Transparent"
-                HasUnevenRows="false"
-                IsInNativeLayout="true"
-
-                FlowItemTappedCommand="{Binding ItemSelectedCommand}"
-                FlowItemsSource="{Binding ItensHistorico}" >
-
-                <flv:FlowListView.FlowColumnTemplate>
-                    <DataTemplate>
-
-                        <Frame>
-                            <Label  Text="{Binding Data}"  
-                                        HorizontalOptions="Center"
-                                        VerticalTextAlignment="Center" 
-                                        FontAttributes="Bold"
-                                        HorizontalTextAlignment="Center" FontSize="20" />
-                        </Frame>
-
-                    </DataTemplate>
-                </flv:FlowListView.FlowColumnTemplate>
-            </flv:FlowListView>
-        </StackLayout>
-    </ContentPage.Content>-->
+             x:Class="WeCare.View.HistoricoView"
+             Title="Histórico Clínico"
+             NavigationPage.HasBackButton="True">
 
     <ContentPage.Content>
         <StackLayout>
