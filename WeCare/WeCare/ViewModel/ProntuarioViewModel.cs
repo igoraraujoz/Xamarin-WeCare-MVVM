@@ -9,15 +9,16 @@ using Xamarin.Forms;
 
 namespace WeCare.ViewModel
 {
-    
+
     public class ProntuarioViewModel : BaseVM
     {
         ProntuarioService prontuarioService;
-        INavigationService _serviceNavigation;        
+        INavigationService _serviceNavigation;
+        StringBuilder messageError = new StringBuilder();
 
         public ProntuarioViewModel(INavigationService serviceNavigation)
         {
-            prontuarioService = new ProntuarioService();            
+            prontuarioService = new ProntuarioService();
             _serviceNavigation = serviceNavigation;
         }
 
@@ -44,28 +45,26 @@ namespace WeCare.ViewModel
             model.Id = Guid.NewGuid();
             model.Medico = this.Medico;
             model.UnidadeClinica = this.UnidadeClinica;
-            model.EspecialidadeId = this.selectedEspecialidade.Id;
 
-            var validado = ValidarItens(model);
+            if(this.selectedEspecialidade != null)
+                model.EspecialidadeId = this.selectedEspecialidade.Id;
+
+            var validado = prontuarioService.ValidarItens(model, ref messageError);
             if (validado)
             {
                 var result = prontuarioService.Cadastrar(model);
-                if(result)
+                if (result)
                     await _serviceNavigation.NavigateToAsync<HomeViewModel>();
                 else
+                {
                     await Application.Current.MainPage.DisplayAlert("Erro !", "Houve um problema no cadastro, contate o administrador", "Ok");
+                }
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Erro !", "Usuario ou senha nao podem ser vazios", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Oops!", messageError.ToString(), "Ok");
             }
-        }
-
-        private bool ValidarItens(ProntuarioModel model)
-        {
-            bool validate = true;
-            return validate; 
-        }
+        }        
 
 
         private DateTime data = DateTime.Now;

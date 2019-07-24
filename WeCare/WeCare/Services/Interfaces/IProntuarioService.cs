@@ -12,5 +12,6 @@ namespace WeCare.Services.Interfaces
         bool Atualizar(ProntuarioModel model);
         ProntuarioModel GetById(Guid id);
         List<ProntuarioModel> GetAll();
+        bool ValidarItens(ProntuarioModel model, ref StringBuilder messageError);
     }
 }

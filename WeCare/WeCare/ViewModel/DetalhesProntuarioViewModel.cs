@@ -15,6 +15,7 @@ namespace WeCare.ViewModel
         ProntuarioService prontuarioService;
         INavigationService _serviceNavigation;
         EspecialidadeService especialidadeService;
+        StringBuilder messageError = new StringBuilder();
 
         public DetalhesProntuarioViewModel(INavigationService serviceNavigation)
         {
@@ -65,26 +66,22 @@ namespace WeCare.ViewModel
             model.UnidadeClinica = this.UnidadeClinica;
             model.EspecialidadeId = this.selectedEspecialidade.Id;
 
-            var validado = ValidarItens(model);
+            var validado = prontuarioService.ValidarItens(model, ref messageError);
             if (validado)
             {
                 var result = prontuarioService.Atualizar(model);
                 if (result)
                     await _serviceNavigation.NavigateToAsync<HomeViewModel>();
                 else
+                {
                     await Application.Current.MainPage.DisplayAlert("Erro !", "Houve um problema no cadastro, contate o administrador", "Ok");
+                }
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Erro !", "Usuario ou senha nao podem ser vazios", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Oops!", messageError.ToString(), "Ok");
             }
-        }
-
-        private bool ValidarItens(ProntuarioModel model)
-        {
-            bool validate = true;
-            return validate;
-        }
+        }       
 
 
         private DateTime data = DateTime.Now;

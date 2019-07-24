@@ -3,12 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
              x:Class="WeCare.View.HomeView">
-    <ContentPage.Content>
-        <StackLayout>
-            <iconize:IconButton Text="fas-notes-medical" FontSize="35"  TextColor="Red" Command="{Binding ProntuarioCommand}}" />
-            <iconize:IconButton Text="fas-history" FontSize="35"  TextColor="Red" Command="{Binding HistoricoCommand}"/>
-            <iconize:IconButton Text="fas-bell" FontSize="35"  TextColor="Red" />
-            <iconize:IconButton Text="fas-question" FontSize="35"  TextColor="Red" />
-        </StackLayout>
+    <ContentPage.Content>        
+
+        <Grid RowSpacing="50" ColumnSpacing="50" HorizontalOptions="CenterAndExpand">
+            
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width = "Auto"/>
+                <ColumnDefinition Width = "Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions >
+                <RowDefinition Height = "Auto"/>
+                <RowDefinition Height = "Auto"/>
+                <RowDefinition Height = "Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="Logo.PNG" Aspect="AspectFit" Grid.Row="0" Grid.ColumnSpan="2"/>
+            
+            <iconize:IconButton Text="fas-notes-medical" FontSize="70"  TextColor="Purple" Command="{Binding ProntuarioCommand}" Grid.Column="0" Grid.Row="1" BackgroundColor="Transparent"/>
+            <iconize:IconButton Text="fas-history" FontSize="70"  TextColor="Purple" Command="{Binding HistoricoCommand}" Grid.Column="1" Grid.Row="1" BackgroundColor="Transparent"/>
+            <iconize:IconButton Text="fas-bell" FontSize="70"  TextColor="Purple" Grid.Column="0" Grid.Row="2" BackgroundColor="Transparent"/>
+            <iconize:IconButton Text="fas-question" FontSize="70"  TextColor="Purple" Grid.Column="1" Grid.Row="2" BackgroundColor="Transparent"/>
+            
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

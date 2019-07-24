@@ -48,5 +48,31 @@ namespace WeCare.Services
 
             return _db.GetAll();
         }
+
+        public bool ValidarItens(ProntuarioModel model, ref StringBuilder messageError)
+        {
+            bool validate = true;
+            messageError = new StringBuilder();
+
+            if (model.Data == null || model.Data == DateTime.MinValue)
+                messageError.AppendLine("A data é obrigatória!");
+
+            if (String.IsNullOrEmpty(model.UnidadeClinica))
+                messageError.AppendLine("A unidade clinica é obrigatória!");
+
+            if (String.IsNullOrEmpty(model.Medico))
+                messageError.AppendLine("O médico é obrigatório!");
+
+            if (model.EspecialidadeId == null || model.EspecialidadeId == Guid.Empty)
+                messageError.AppendLine("A especialidade é obrigatória!");
+
+            if (String.IsNullOrEmpty(model.Descricao))
+                messageError.AppendLine("A descrição é obrigatória!");
+
+            if (messageError != null && messageError.Length > 0)
+                validate = false;
+
+            return validate;
+        }
     }
 }
