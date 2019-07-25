@@ -26,5 +26,9 @@
             <Setter Property="BorderWidth" Value="4"/>
             <Setter Property="VerticalOptions" Value="Center" />
         </Style>
+
+        <Style TargetType="DatePicker">
+            <Setter Property="Format" Value="dd/MM/yyyy"/>
+        </Style>
     </Application.Resources>
 </Application>

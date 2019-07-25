@@ -19,7 +19,7 @@ namespace WeCare.Data
 
         public override List<ProntuarioModel> GetAll()
         {
-            return new List<ProntuarioModel>(db.Table<ProntuarioModel>());
+            return new List<ProntuarioModel>(db.Table<ProntuarioModel>().OrderByDescending(x=> x.Data));
         }
 
         public override ProntuarioModel GetById(Guid id)
