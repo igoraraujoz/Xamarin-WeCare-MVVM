@@ -12,15 +12,15 @@ namespace WeCare.ViewModel
 {
     public class DetalhesProntuarioViewModel : BaseVM
     {
-        ProntuarioService prontuarioService;
+        IProntuarioService _prontuarioService;
         INavigationService _serviceNavigation;
-        EspecialidadeService especialidadeService;
+        IEspecialidadeService _especialidadeService;
         StringBuilder messageError = new StringBuilder();
 
-        public DetalhesProntuarioViewModel(INavigationService serviceNavigation)
+        public DetalhesProntuarioViewModel(INavigationService serviceNavigation, IEspecialidadeService especialidadeService, IProntuarioService prontuarioService)
         {
-            prontuarioService = new ProntuarioService();
-            especialidadeService = new EspecialidadeService();
+            _prontuarioService = prontuarioService;
+            _especialidadeService = especialidadeService;
             _serviceNavigation = serviceNavigation;
         }
 
@@ -39,8 +39,8 @@ namespace WeCare.ViewModel
         {
             if (navigationData is ProntuarioModel)
             {
-                var detalhe = prontuarioService.GetById(((ProntuarioModel)navigationData).Id);
-                var listaEspecilidades = especialidadeService.GetAll();
+                var detalhe = _prontuarioService.GetById(((ProntuarioModel)navigationData).Id);
+                var listaEspecilidades = _especialidadeService.GetAll();
 
                 this.Id = detalhe.Id;
                 this.Data = detalhe.Data;
@@ -66,10 +66,10 @@ namespace WeCare.ViewModel
             model.UnidadeClinica = this.UnidadeClinica;
             model.EspecialidadeId = this.selectedEspecialidade.Id;
 
-            var validado = prontuarioService.ValidarItens(model, ref messageError);
+            var validado = _prontuarioService.ValidarItens(model, ref messageError);
             if (validado)
             {
-                var result = prontuarioService.Atualizar(model);
+                var result = _prontuarioService.Atualizar(model);
                 if (result)
                     await _serviceNavigation.NavigateToAsync<HomeViewModel>();
                 else

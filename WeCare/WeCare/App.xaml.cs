@@ -14,7 +14,12 @@ namespace WeCare
     {
         public App()
         {
+            //Registro da injeção de dependecia para as classes de services
             DependencyService.Register<INavigationService, NavigationService>();
+            DependencyService.Register<IEspecialidadeService, EspecialidadeService>();
+            DependencyService.Register<IProntuarioService, ProntuarioService>();
+            DependencyService.Register<ILoginService, LoginService>();
+
             InitializeComponent();
             InitPlugins();
             InitNavigation();

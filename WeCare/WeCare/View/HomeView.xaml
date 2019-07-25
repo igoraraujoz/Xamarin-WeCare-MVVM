@@ -22,8 +22,8 @@
             
             <iconize:IconButton Text="fas-notes-medical" FontSize="70"  TextColor="Purple" Command="{Binding ProntuarioCommand}" Grid.Column="0" Grid.Row="1" BackgroundColor="Transparent"/>
             <iconize:IconButton Text="fas-history" FontSize="70"  TextColor="Purple" Command="{Binding HistoricoCommand}" Grid.Column="1" Grid.Row="1" BackgroundColor="Transparent"/>
-            <iconize:IconButton Text="fas-bell" FontSize="70"  TextColor="Purple" Grid.Column="0" Grid.Row="2" BackgroundColor="Transparent"/>
-            <iconize:IconButton Text="fas-question" FontSize="70"  TextColor="Purple" Grid.Column="1" Grid.Row="2" BackgroundColor="Transparent"/>
+            <iconize:IconButton Text="fas-bell" FontSize="70"  TextColor="Purple"  Command="{Binding AlarmCommand}" Grid.Column="0" Grid.Row="2" BackgroundColor="Transparent"/>
+            <iconize:IconButton Text="fas-question" FontSize="70"  TextColor="Purple" Command="{Binding HelpCommand}" Grid.Column="1" Grid.Row="2" BackgroundColor="Transparent"/>
             
         </Grid>
 

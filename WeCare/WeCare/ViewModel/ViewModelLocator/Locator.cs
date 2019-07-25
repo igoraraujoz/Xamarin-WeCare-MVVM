@@ -22,13 +22,11 @@ namespace WeCare.ViewModel.ViewModelLocator
         {
             _container = new UnityContainer();
 
-            //Registro de Interfaces
+            //Registro de Interfaces no locator do container
             _container.RegisterType<INavigationService, NavigationService>();
-            // _container.RegisterType<IServiceMessages, ServiceMessages>();
-            //registro de ViewModel
-            //_container.RegisterType<LoginViewModel>();
-            //_container.RegisterType<DetalhesViewModel>();
-            //_container.RegisterType<HomeViewModel>();
+            _container.RegisterType<IProntuarioService, ProntuarioService>();
+            _container.RegisterType<IEspecialidadeService, EspecialidadeService>();
+            _container.RegisterType<ILoginService, LoginService>();
 
         }
 

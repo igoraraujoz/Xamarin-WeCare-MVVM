@@ -41,5 +41,27 @@ namespace WeCare.ViewModel
                 });
             }
         }
+
+        public ICommand AlarmCommand
+        {
+            get
+            {
+                return new Command(async (value) =>
+                {
+                    await Application.Current.MainPage.DisplayAlert("Sem acesso", "Olá, para acessar esta funcionalidade é necessário ser assinante", "Ok");
+                });
+            }
+        }
+
+        public ICommand HelpCommand
+        {
+            get
+            {
+                return new Command(async (value) =>
+                {                    
+                    await _serviceNavigation.NavigateToAsync<HelpViewModel>();
+                });
+            }
+        }
     }
 }

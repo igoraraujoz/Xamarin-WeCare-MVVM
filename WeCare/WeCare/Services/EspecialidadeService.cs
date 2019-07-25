@@ -25,8 +25,20 @@ namespace WeCare.Services
             {
                 //Carga inicial da tabela
                 var carga = new List<EspecialidadeModel>() {
-                    new EspecialidadeModel() {  Id = new Guid("6009f71f-11db-4f1d-b2f7-2c2bfe859a74"), Descricao = "Clinico Geral" },
-                    new EspecialidadeModel() {Id= new Guid("1bb1ee8d-9b06-48bd-8417-2f405cf539bb"), Descricao = "Dermatologista" }
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Cardiologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Clinico Geral" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Dermatologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Endocrinologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Gastroenterologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Ginecologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Mastologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Neurologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Oftalmologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Ortopedista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Pediatra" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Pneumologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Reumatologista" },
+                    new EspecialidadeModel() { Id = Guid.NewGuid(), Descricao = "Urologista" },
                 };
 
                 foreach (var item in carga)

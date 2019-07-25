@@ -12,13 +12,13 @@ namespace WeCare.ViewModel
 
     public class ProntuarioViewModel : BaseVM
     {
-        ProntuarioService prontuarioService;
+        IProntuarioService _prontuarioService;
         INavigationService _serviceNavigation;
         StringBuilder messageError = new StringBuilder();
 
-        public ProntuarioViewModel(INavigationService serviceNavigation)
+        public ProntuarioViewModel(INavigationService serviceNavigation, IProntuarioService prontuarioService)
         {
-            prontuarioService = new ProntuarioService();
+            _prontuarioService = prontuarioService;
             _serviceNavigation = serviceNavigation;
         }
 
@@ -49,10 +49,10 @@ namespace WeCare.ViewModel
             if(this.selectedEspecialidade != null)
                 model.EspecialidadeId = this.selectedEspecialidade.Id;
 
-            var validado = prontuarioService.ValidarItens(model, ref messageError);
+            var validado = _prontuarioService.ValidarItens(model, ref messageError);
             if (validado)
             {
-                var result = prontuarioService.Cadastrar(model);
+                var result = _prontuarioService.Cadastrar(model);
                 if (result)
                     await _serviceNavigation.NavigateToAsync<HomeViewModel>();
                 else

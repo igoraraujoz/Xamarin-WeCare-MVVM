@@ -11,11 +11,11 @@ namespace WeCare.ViewModel
 {
     public class LoginViewModel : BaseVM
     {
-        LoginService loginService;
+        ILoginService _loginService;
         INavigationService _serviceNavigation;
-        public LoginViewModel(INavigationService serviceNavigation)
+        public LoginViewModel(INavigationService serviceNavigation, ILoginService loginService)
         {
-            loginService = new LoginService();
+            _loginService = loginService;
             _serviceNavigation = serviceNavigation;
         }
 
@@ -40,9 +40,7 @@ namespace WeCare.ViewModel
             {
                 model.Usuario = this.Usuario;
                 model.Senha = this.Senha;
-
-                //var result = await service.Logar(model);
-                //if (result)
+               
                 await _serviceNavigation.NavigateToAsync<HomeViewModel>();
             }
             else

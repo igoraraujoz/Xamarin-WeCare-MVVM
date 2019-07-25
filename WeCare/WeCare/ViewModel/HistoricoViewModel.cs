@@ -14,20 +14,20 @@ namespace WeCare.ViewModel
    public  class HistoricoViewModel : BaseVM
     {
         INavigationService _serviceNavigation;
-        ProntuarioService prontuarioService;
+        IProntuarioService _prontuarioService;
         public FlowObservableCollection<ProntuarioModel> ItensHistorico { get; set; }
 
-        public HistoricoViewModel(INavigationService serviceNavigation)
+        public HistoricoViewModel(INavigationService serviceNavigation, IProntuarioService prontuarioService)
         {
             _serviceNavigation = serviceNavigation;
-            prontuarioService = new ProntuarioService();
+            _prontuarioService = prontuarioService;
             ItensHistorico = new FlowObservableCollection<ProntuarioModel>();
             CarregarHistorico();
         }
 
         public void CarregarHistorico()
         {
-            var lista = prontuarioService.GetAll();
+            var lista = _prontuarioService.GetAll();
 
             foreach (var item in lista)
             {

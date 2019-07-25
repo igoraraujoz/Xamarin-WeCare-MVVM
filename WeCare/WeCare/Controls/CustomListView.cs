@@ -6,6 +6,9 @@ using Xamarin.Forms;
 
 namespace WeCare.Controls
 {
+    /// <summary>
+    /// Controle customizado para chamar um command a partir de um ListView
+    /// </summary>
     public class CustomListView : ListView
     {
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(CustomListView), null);        
