@@ -22,7 +22,7 @@
 
                 <Entry Placeholder="Médico" Text="{Binding Medico}"/>
                 <Entry Placeholder="Unidade Clínica" Text="{Binding UnidadeClinica}"/>
-                <Entry Placeholder="Descrição" Text="{Binding Descricao}"/>
+                <Editor Placeholder="Descrição" Text="{Binding Descricao}" MaxLength="255" AutoSize="TextChanges" />
 
                 <Button Text="Atualizar" Command="{Binding AtualizarCommand}" />
 

@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
              x:Class="WeCare.View.HelpView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="25">
+            <iconize:IconLabel Text="fas-notes-medical" FontSize="35"  TextColor="Purple" HorizontalTextAlignment="Center"/>
+            <Label Text="Realiza o cadastro de um novo prontuário." HorizontalOptions="Center"/>
+            <iconize:IconLabel Text="fas-history" FontSize="35"  TextColor="Purple" HorizontalTextAlignment="Center" />
+            <Label Text="Exibe o histórico clínico" HorizontalOptions="Center"/>
+            <iconize:IconLabel Text="fas-bell" FontSize="35"  TextColor="Purple" HorizontalOptions="Center"/>
+            <Label Text="Agenda um alerta para tomar um medicamento" HorizontalOptions="Center"/>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
